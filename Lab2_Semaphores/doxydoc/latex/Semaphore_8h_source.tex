@@ -1,0 +1,28 @@
+\hypertarget{Semaphore_8h_source}{}\doxysection{Semaphore.\+h}
+\mbox{\hyperlink{Semaphore_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SEMAPHORE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SEMAPHORE\_H }}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <condition\_variable>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classSemaphore}{Semaphore}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{classSemaphore_a1456f105008b0c309f41211afbdd5fee}{m\_uiCount}}; }
+\DoxyCodeLine{18     std::mutex \mbox{\hyperlink{classSemaphore_a6490f302f311da3ce373a81672673296}{m\_mutex}};}
+\DoxyCodeLine{19     std::condition\_variable \mbox{\hyperlink{classSemaphore_a2b04d3a53f1fc1a13d7ed5d19d9e2be9}{m\_condition}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{classSemaphore_a0d9290d316636875ca85d1d78950a817}{Semaphore}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} uiCount=0)}
+\DoxyCodeLine{23           : \mbox{\hyperlink{classSemaphore_a1456f105008b0c309f41211afbdd5fee}{m\_uiCount}}(uiCount) \{ \};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSemaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}{Wait}}();}
+\DoxyCodeLine{25     \textcolor{keyword}{template}< \textcolor{keyword}{typename} R,\textcolor{keyword}{typename} P >}
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSemaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}{Wait}}(\textcolor{keyword}{const} std::chrono::duration<R,P>\& crRelTime);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSemaphore_a86f92f738b4486439b296d8e235895f2}{Signal}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
