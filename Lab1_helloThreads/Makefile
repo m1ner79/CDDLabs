@@ -1,8 +1,8 @@
-#Joseph Kehoe 13/9/2017
-#Second improved Makefile
-#Used to contain commands to compile projects
-#Equivalent(?) to a project file in VStudio -- only better!
-#See http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ for info.
+#This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+#author: Michal Gornicki
+#date: 26/09/2022
+#description: Makefile contains commands to compile newTestFile
 
 
 CC=g++
@@ -12,10 +12,10 @@ CFLAGS= -std=c++11 -pthread
 %.o: %.cpp
 	$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
 
-ALL: helloThreads.o
-	$(CC) -o helloThreads helloThreads.o $(CFLAGS) $(DEBUGFLAGS)
+ALL: newFile.o
+	$(CC) -o newTestFile newFile.o $(CFLAGS) $(DEBUGFLAGS)
 
-DEBUG: DEBUGFLAGS = -DDEBUG
+DEBUG: DEBUGFLAGS = -g -O0
 DEBUG: ALL
 
 #this is customary and just deletes all .o files
