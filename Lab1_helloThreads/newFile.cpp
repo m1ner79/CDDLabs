@@ -6,7 +6,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-
  * \author Michal Gornicki
  * \date 26/09/2022
  * \copyright Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
- * \section sec-deps Dependencies  
+ * \section sec-deps Dependencies
  * gcc v 7.5.0 or greater
  * Make
  * \section sec-ins Install
