@@ -1,0 +1,25 @@
+var NAVTREEINDEX0 =
+{
+"files.html":[2,0],
+"globals.html":[2,1,0],
+"globals_func.html":[2,1,1],
+"hello_threads_8cpp.html":[2,0,0],
+"hello_threads_8cpp.html#ae0dbf7b3f4f43153450248b3ed6e6b51":[2,0,0,0],
+"hello_threads_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[2,0,0,1],
+"hello_threads_8cpp_source.html":[2,0,0],
+"index.html":[],
+"index.html":[0],
+"index.html#sec-deps":[0,0],
+"index.html#sec-ins":[0,1],
+"index.html#sec-use":[0,2],
+"md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html":[1],
+"md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md3":[1,0],
+"md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md4":[1,1],
+"md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md5":[1,2],
+"md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md6":[1,3],
+"md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md7":[1,4],
+"new_file_8cpp.html":[2,0,1],
+"new_file_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe":[2,0,1,0],
+"new_file_8cpp_source.html":[2,0,1],
+"pages.html":[]
+};
