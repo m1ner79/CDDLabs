@@ -15,7 +15,6 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-
  * type "./myFile" to run it
 */
 
-
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
@@ -38,30 +37,28 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)  {
   sleep(delay);
 
-  //waking up the thread
+  /** waking up the thread */
   theSemaphore->Signal();
   std::cout <<"I ";
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
 }
-/*! displays a message second*/
 
 /**
- * @brief 
+ * @brief displays a message second
  * 
  * @param theSemaphore 
  */
 
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
-  //pausing the thread
+  /** pausing the thread */
   theSemaphore->Wait();
   std::cout <<"This ";
   std::cout << "will ";
   std::cout << "appear ";
   std::cout << "second"<<std::endl;
 }
-
 
 int main(void){
   std::thread threadOne, threadTwo;
@@ -71,7 +68,7 @@ int main(void){
   threadOne=std::thread(taskTwo,sem);
   threadTwo=std::thread(taskOne,sem,taskOneDelay);
   std::cout << "Launched from the main\n";
-   /**< Wait for the threads to finish */
+   /** Wait for the threads to finish */
   threadOne.join();
   threadTwo.join();
   return 0;
