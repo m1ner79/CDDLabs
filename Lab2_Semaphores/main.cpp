@@ -1,11 +1,26 @@
-//Michal Gornicki C00265618 21/10/2022
+/*This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
+To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+*/
+/**
+ * \mainpage Lab2 - Semaphores
+ * \author Michal Gornicki
+ * \date 21/10/2022
+ * \copyright Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+ * \section sec-deps Dependencies
+ * gcc v 7.5.0 or greater
+ * Make
+ * \section sec-ins Install
+ * open terminal in directory and run "make ALL"
+ * \section sec-use Usage
+ * type "./myFile" to run it
+*/
 
-//This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
 #include <unistd.h>
+
 /*! \class Signal
     \brief An Implementation of Threads Using Semaphores
 
@@ -13,10 +28,17 @@
 
 */
 
+/**
+ * @brief displays a message first
+ * 
+ * @param theSemaphore 
+ * @param delay 
+ */
 
-/*! displays a message first*/
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)  {
   sleep(delay);
+
+  //waking up the thread
   theSemaphore->Signal();
   std::cout <<"I ";
   std::cout << "must ";
@@ -24,8 +46,16 @@ void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)  {
   std::cout << "first"<<std::endl;
 }
 /*! displays a message second*/
+
+/**
+ * @brief 
+ * 
+ * @param theSemaphore 
+ */
+
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
-    theSemaphore->Wait();
+  //pausing the thread
+  theSemaphore->Wait();
   std::cout <<"This ";
   std::cout << "will ";
   std::cout << "appear ";
@@ -36,7 +66,7 @@ void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
 int main(void){
   std::thread threadOne, threadTwo;
   std::shared_ptr<Semaphore> sem( new Semaphore);
-  /**< Launch the threads  */
+  /** Launch the threads  */
   int taskOneDelay=5;
   threadOne=std::thread(taskTwo,sem);
   threadTwo=std::thread(taskOne,sem,taskOneDelay);
