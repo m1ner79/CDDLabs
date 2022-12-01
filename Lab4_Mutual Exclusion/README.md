@@ -3,7 +3,7 @@
 ### Date 01/12/2022
 ### Author
 Michal Gornicki
-## Description of the Lab2
+## Description of the Lab4
 An implementation of Mutual Exclusion using Semaphores.
 ## List of files and what they contain:
 
