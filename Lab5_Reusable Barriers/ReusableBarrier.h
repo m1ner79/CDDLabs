@@ -1,0 +1,14 @@
+//
+// Created by michal on 11/12/22.
+//
+
+#ifndef LAB5_REUSABLE_BARRIERS_REUSABLEBARRIER_H
+#define LAB5_REUSABLE_BARRIERS_REUSABLEBARRIER_H
+
+
+class ReusableBarrier {
+
+};
+
+
+#endif //LAB5_REUSABLE_BARRIERS_REUSABLEBARRIER_H
