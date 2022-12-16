@@ -43,7 +43,14 @@
  */
 
 /* Code: */
-
-
+#pragma once
+class Event
+{
+private:
+    char character;
+public:
+    Event();
+    void consumer();
+};
 
 /* Event.h ends here */

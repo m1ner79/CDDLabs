@@ -44,6 +44,26 @@
 
 /* Code: */
 
+class SafeBuffer {
+public:
+    void Put(char c) {
+        std::lock_guard<std::mutex> lock(mutex_);
+        buffer_.push_back(c);
+    }
 
+    char Get() {
+        std::lock_guard<std::mutex> lock(mutex_);
+        if (buffer_.empty()) {
+            return '\0';
+        }
+        char c = buffer_.front();
+        buffer_.pop_front();
+        return c;
+    }
+
+private:
+    std::mutex mutex_;
+    std::deque<char> buffer_;
+};
 
 /* SafeBuffer.h ends here */

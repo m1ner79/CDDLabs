@@ -1,4 +1,4 @@
-#include "Barrier.h"
+#include "SafeBuffer.h"
 #include "Event.h"
 #include <iostream>
 #include <thread>
@@ -13,7 +13,7 @@ const int size=20;
     \brief Creates events and adds them to buffer
 */
 
-void producer(std::shared_ptr<SafeBuffer<std::shared_ptr<Event>> theBuffer, int numLoops){
+void producer(std::shared_ptr<SafeBuffer> theBuffer, int numLoops){
 
   for(int i=0;i<numLoops;++i){
     //Produce event and add to buffer
@@ -42,7 +42,7 @@ void consumer(std::shared_ptr<SafeBuffer<std::shared_ptr Event>> theBuffer, int 
 int main(void){
 
   std::vector<std::thread> vt(num_threads);
-  std::shared_ptr<SafeBuffer<std::shared_ptr<Event>> aBuffer( new Buffer<shared_ptr Event>(size));
+  std::shared_ptr<SafeBuffer> aBuffer( new SafeBuffer(size));
   /**< Launch the threads  */
   int i=0;
   for(std::thread& t: vt){
