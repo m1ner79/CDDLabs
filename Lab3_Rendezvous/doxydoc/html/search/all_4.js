@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wait_0',['Wait',['../class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda',1,'Semaphore::Wait()'],['../class_semaphore.html#a7f700173ae86ae623684109066e07656',1,'Semaphore::Wait(const std::chrono::duration&lt; R, P &gt; &amp;crRelTime)']]]
+  ['taskone_8',['taskOne',['../main_8cpp.html#a9141e3eb0b1274e58b053fd8a60a94e3',1,'main.cpp']]],
+  ['tasktwo_9',['taskTwo',['../main_8cpp.html#ac7cb6b39082835c7e3c853c42af9ecdc',1,'main.cpp']]]
 ];
