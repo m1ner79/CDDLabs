@@ -36,13 +36,13 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-
 
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)  {
   sleep(delay);
-
-  /** waking up the thread */
-  theSemaphore->Signal();
   std::cout <<"I ";
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
+
+  /** signal that taskOne has finished*/ 
+  theSemaphore->Signal();
 }
 
 /**
@@ -52,7 +52,7 @@ void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)  {
  */
 
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
-  /** pausing the thread */
+  /** wait until taskOne signals that it has finished */
   theSemaphore->Wait();
   std::cout <<"This ";
   std::cout << "will ";
