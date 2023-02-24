@@ -24,18 +24,18 @@
 */
 var NAVTREE =
 [
-  [ "Lab1 - Lab1 - Hello Threads", "index.html", [
+  [ "Lab1 - Hello Threads", "index.html", [
     [ "Lab1 - helloThreads", "index.html", [
       [ "Dependencies", "index.html#sec-deps", null ],
       [ "Install", "index.html#sec-ins", null ],
       [ "Usage", "index.html#sec-use", null ]
     ] ],
-    [ "Lab1 - Hello Threads", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html", [
-      [ "Description of the Lab1", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "Dependencies", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "Install", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md5", null ],
-      [ "Usage", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md6", null ],
-      [ "Project License:", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md7", null ]
+    [ "Lab1 - Hello Threads", "md__home_michal__documents__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html", [
+      [ "Description of the Lab1", "md__home_michal__documents__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "Dependencies", "md__home_michal__documents__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Install", "md__home_michal__documents__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Usage", "md__home_michal__documents__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "Project License:", "md__home_michal__documents__c_d_d_labs__lab1_hello_threads__r_e_a_d_m_e.html#autotoc_md7", null ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
