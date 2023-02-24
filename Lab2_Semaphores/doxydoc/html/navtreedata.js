@@ -24,17 +24,19 @@
 */
 var NAVTREE =
 [
-  [ "Lab2 - Semaphores", "index.html", [
-    [ "Dependencies", "index.html#sec-deps", null ],
-    [ "Install", "index.html#sec-ins", null ],
-    [ "Usage", "index.html#sec-use", null ],
-    [ "Lab2 - Semaphores", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html", [
-      [ "Description of the Lab2", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "List of files and what they contain:", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "Dependencies", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md5", null ],
-      [ "Install", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md6", null ],
-      [ "Usage", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md7", null ],
-      [ "Project License:", "md__home_michal__documents__y4__distributed__and__concurrent__device__developement__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md8", null ]
+  [ "Lab2_Semaphores", "index.html", [
+    [ "Lab2 - Semaphores", "index.html", [
+      [ "Dependencies", "index.html#sec-deps", null ],
+      [ "Install", "index.html#sec-ins", null ],
+      [ "Usage", "index.html#sec-use", null ]
+    ] ],
+    [ "Lab2 - Semaphores", "md__home_michal__documents__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html", [
+      [ "Description of the Lab2", "md__home_michal__documents__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "List of files and what they contain:", "md__home_michal__documents__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Dependencies", "md__home_michal__documents__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Install", "md__home_michal__documents__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "Usage", "md__home_michal__documents__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md7", null ],
+      [ "Project License:", "md__home_michal__documents__c_d_d_labs__lab2__semaphores__r_e_a_d_m_e.html#autotoc_md8", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

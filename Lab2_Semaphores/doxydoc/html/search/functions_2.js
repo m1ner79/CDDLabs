@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['taskone_0',['taskOne',['../main_8cpp.html#a2b4729d561c345111ccab970fe11e229',1,'main.cpp']]],
-  ['tasktwo_1',['taskTwo',['../main_8cpp.html#ae4ea9570be601d182fa473c7ca431852',1,'main.cpp']]]
+  ['taskone_20',['taskOne',['../main_8cpp.html#a2b4729d561c345111ccab970fe11e229',1,'main.cpp']]],
+  ['tasktwo_21',['taskTwo',['../main_8cpp.html#ae4ea9570be601d182fa473c7ca431852',1,'main.cpp']]]
 ];
