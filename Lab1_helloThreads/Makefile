@@ -12,8 +12,11 @@ CFLAGS= -std=c++11 -pthread
 %.o: %.cpp
 	$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
 
-ALL: newFile.o
-	$(CC) -o newTestFile newFile.o $(CFLAGS) $(DEBUGFLAGS)
+#variable assigned to the object file that should be linked together to create the executable newTestFile.                                                 
+OBJFILES = newFile.o 
+
+ALL: $(OBJFILES)
+	$(CC) -o newTestFile $(OBJFILES) $(CFLAGS) $(DEBUGFLAGS)
 
 DEBUG: DEBUGFLAGS = -g -O0
 DEBUG: ALL
