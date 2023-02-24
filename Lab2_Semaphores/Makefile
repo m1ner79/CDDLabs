@@ -11,9 +11,11 @@ CFLAGS= -std=c++11 -pthread
 #This rule says that each .o file depends on a .cpp file of the same name
 %.o: %.cpp
 	$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
+#variable assigned to the list of object files that should be linked together to create the executable myFile.	
+OBJFILES = main.o Semaphore.o
 
-ALL:	main.o Semaphore.o
-	$(CC) -o myFile main.o Semaphore.o $(CFLAGS) $(DEBUGFLAGS)
+ALL: $(OBJFILES)
+	$(CC) -o myFile $(OBJFILES) $(CFLAGS) $(DEBUGFLAGS)
 
 DEBUG: DEBUGFLAGS = -g -O0
 DEBUG: ALL
