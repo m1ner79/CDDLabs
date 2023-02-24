@@ -11,8 +11,11 @@ CFLAGS= -std=c++11 -pthread
 %.o: %.cpp
 	$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
 
-ALL:	main.o Semaphore.o ReusableBarrier.o
-	$(CC) -o myFile main.o Semaphore.o ReusableBarrier.o $(CFLAGS) $(DEBUGFLAGS)
+#variable assigned to the list of object files that should be linked together to create the executable myFile.	
+OBJFILES = main.o Semaphore.o ReusableBarrier.o
+
+ALL: $(OBJFILES)
+	$(CC) -o myFile $(OBJFILES) $(CFLAGS) $(DEBUGFLAGS)
 
 DEBUG: DEBUGFLAGS = -g -O0
 DEBUG: ALL
