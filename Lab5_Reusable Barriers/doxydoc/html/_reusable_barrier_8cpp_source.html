@@ -24,9 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Lab5 - Reusable Barriers
+   &#160;<span id="projectnumber">Version: 1.1</span>
    </div>
    <div id="projectbrief">The purpose of the lab is to create a reusable barrier class that employs the Semaphore Class. It should be a fully working class (i.e. include constructors, destructors and a well defined interface).</div>
   </td>
@@ -93,57 +94,55 @@ $(document).ready(function(){initNavTree('_reusable_barrier_8cpp_source.html',''
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_reusable_barrier_8h.html">ReusableBarrier.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_reusable_barrier.html#abaae871a3c63e13f009c8cca4a07abb2">   12</a></span>&#160;<a class="code" href="class_reusable_barrier.html#abaae871a3c63e13f009c8cca4a07abb2">ReusableBarrier::~ReusableBarrier</a>() {}</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">   14</a></span>&#160;<a class="code" href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">ReusableBarrier::ReusableBarrier</a>(<span class="keywordtype">int</span> Threads)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    count = 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    numThreads = Threads;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_reusable_barrier.html#ab8e1c55da45a3848588d34025e04d99d">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_reusable_barrier.html#ab8e1c55da45a3848588d34025e04d99d">ReusableBarrier::taskA</a>()</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    mutex.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    count += 1;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mutex.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (count == numThreads)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        outerGate.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        innerGate.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        innerGate.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        innerGate.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_reusable_barrier.html#ad65578dbb2e60ce1fdf830195ba7f074">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_reusable_barrier.html#ad65578dbb2e60ce1fdf830195ba7f074">ReusableBarrier::taskB</a>()</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    mutex.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    count -= 1;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mutex.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (count == 0)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        innerGate.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        outerGate.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        outerGate.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        outerGate.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">   17</a></span>&#160;<a class="code" href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">ReusableBarrier::ReusableBarrier</a>(<span class="keywordtype">int</span> Threads)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;: countMutex(1), numThreads(Threads), count(0){}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_reusable_barrier.html#ab8e1c55da45a3848588d34025e04d99d">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_reusable_barrier.html#ab8e1c55da45a3848588d34025e04d99d">ReusableBarrier::taskA</a>()</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    countMutex.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    count += 1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    countMutex.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (count == numThreads)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        outerGate.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        innerGate.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        innerGate.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        innerGate.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_reusable_barrier.html#ad65578dbb2e60ce1fdf830195ba7f074">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_reusable_barrier.html#ad65578dbb2e60ce1fdf830195ba7f074">ReusableBarrier::taskB</a>()</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    countMutex.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    count -= 1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    countMutex.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (count == 0)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        innerGate.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        outerGate.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        outerGate.<a class="code" href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Wait</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        outerGate.<a class="code" href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Signal</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="ttc" id="a_reusable_barrier_8h_html"><div class="ttname"><a href="_reusable_barrier_8h.html">ReusableBarrier.h</a></div></div>
-<div class="ttc" id="aclass_reusable_barrier_html_a1f4fbfae3960db05a0474f15b80d6b67"><div class="ttname"><a href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">ReusableBarrier::ReusableBarrier</a></div><div class="ttdeci">ReusableBarrier(int Threads)</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00014">ReusableBarrier.cpp:14</a></div></div>
-<div class="ttc" id="aclass_reusable_barrier_html_ab8e1c55da45a3848588d34025e04d99d"><div class="ttname"><a href="class_reusable_barrier.html#ab8e1c55da45a3848588d34025e04d99d">ReusableBarrier::taskA</a></div><div class="ttdeci">void taskA()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00020">ReusableBarrier.cpp:20</a></div></div>
+<div class="ttc" id="aclass_reusable_barrier_html_a1f4fbfae3960db05a0474f15b80d6b67"><div class="ttname"><a href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">ReusableBarrier::ReusableBarrier</a></div><div class="ttdeci">ReusableBarrier(int Threads)</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00017">ReusableBarrier.cpp:17</a></div></div>
+<div class="ttc" id="aclass_reusable_barrier_html_ab8e1c55da45a3848588d34025e04d99d"><div class="ttname"><a href="class_reusable_barrier.html#ab8e1c55da45a3848588d34025e04d99d">ReusableBarrier::taskA</a></div><div class="ttdeci">void taskA()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00021">ReusableBarrier.cpp:21</a></div></div>
 <div class="ttc" id="aclass_reusable_barrier_html_abaae871a3c63e13f009c8cca4a07abb2"><div class="ttname"><a href="class_reusable_barrier.html#abaae871a3c63e13f009c8cca4a07abb2">ReusableBarrier::~ReusableBarrier</a></div><div class="ttdeci">virtual ~ReusableBarrier()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00012">ReusableBarrier.cpp:12</a></div></div>
-<div class="ttc" id="aclass_reusable_barrier_html_ad65578dbb2e60ce1fdf830195ba7f074"><div class="ttname"><a href="class_reusable_barrier.html#ad65578dbb2e60ce1fdf830195ba7f074">ReusableBarrier::taskB</a></div><div class="ttdeci">void taskB()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00047">ReusableBarrier.cpp:47</a></div></div>
+<div class="ttc" id="aclass_reusable_barrier_html_ad65578dbb2e60ce1fdf830195ba7f074"><div class="ttname"><a href="class_reusable_barrier.html#ad65578dbb2e60ce1fdf830195ba7f074">ReusableBarrier::taskB</a></div><div class="ttdeci">void taskB()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00048">ReusableBarrier.cpp:48</a></div></div>
 <div class="ttc" id="aclass_semaphore_html_a72aabebf026e3a8b1f3e4d0fa8ee1eda"><div class="ttname"><a href="class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda">Semaphore::Wait</a></div><div class="ttdeci">void Wait()</div><div class="ttdef"><b>Definition:</b> <a href="_semaphore_8cpp_source.html#l00012">Semaphore.cpp:12</a></div></div>
 <div class="ttc" id="aclass_semaphore_html_a86f92f738b4486439b296d8e235895f2"><div class="ttname"><a href="class_semaphore.html#a86f92f738b4486439b296d8e235895f2">Semaphore::Signal</a></div><div class="ttdeci">void Signal()</div><div class="ttdef"><b>Definition:</b> <a href="_semaphore_8cpp_source.html#l00030">Semaphore.cpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

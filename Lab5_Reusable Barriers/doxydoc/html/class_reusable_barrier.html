@@ -24,9 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Lab5 - Reusable Barriers
+   &#160;<span id="projectnumber">Version: 1.1</span>
    </div>
    <div id="projectbrief">The purpose of the lab is to create a reusable barrier class that employs the Semaphore Class. It should be a fully working class (i.e. include constructors, destructors and a well defined interface).</div>
   </td>
@@ -132,10 +133,10 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Condition variable for synchronization Constructor that initializes the number of threads</p>
-<p>Constructor that initializes the number of threads </p>
+<p>Mutex to protect count variable Constructor that initializes the number of threads</p>
+<p>In this particular constructor, the countMutex variable is being initialized with a value of 1, which is the initial value of the binary semaphore used to synchronize access to the count variable. The numThreads variable is being initialized with the value of the Threads parameter passed to the constructor. The count variable is being initialized with a value of 0, indicating that no threads have yet reached the barrier. </p>
 
-<p class="definition">Definition at line <a class="el" href="_reusable_barrier_8cpp_source.html#l00014">14</a> of file <a class="el" href="_reusable_barrier_8cpp_source.html">ReusableBarrier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_reusable_barrier_8cpp_source.html#l00017">17</a> of file <a class="el" href="_reusable_barrier_8cpp_source.html">ReusableBarrier.cpp</a>.</p>
 
 </div>
 </div>
@@ -187,12 +188,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Methods that wait for all threads to reach the phases of the barrier</p>
 <p>Method that waits for all threads to reach the first phase of the barrier </p>
-<p>Lock the mutex</p>
+<p>Lock mutex</p>
 <p>Increment the count of threads that have reached the barrier</p>
 <p>If this is the last thread to reach the barrier,unblock the other threads by signaling the innerGate condition variable</p>
 <p>Otherwise, wait on the innerGate condition variable</p>
 
-<p class="definition">Definition at line <a class="el" href="_reusable_barrier_8cpp_source.html#l00020">20</a> of file <a class="el" href="_reusable_barrier_8cpp_source.html">ReusableBarrier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_reusable_barrier_8cpp_source.html#l00021">21</a> of file <a class="el" href="_reusable_barrier_8cpp_source.html">ReusableBarrier.cpp</a>.</p>
 
 </div>
 </div>
@@ -216,7 +217,7 @@ Public Member Functions</h2></td></tr>
 <p>If this is the last thread to leave the barrier, unblock the other threads by signaling the outerGate condition variable</p>
 <p>Otherwise, wait on the outerGate condition variable</p>
 
-<p class="definition">Definition at line <a class="el" href="_reusable_barrier_8cpp_source.html#l00047">47</a> of file <a class="el" href="_reusable_barrier_8cpp_source.html">ReusableBarrier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_reusable_barrier_8cpp_source.html#l00048">48</a> of file <a class="el" href="_reusable_barrier_8cpp_source.html">ReusableBarrier.cpp</a>.</p>
 
 </div>
 </div>

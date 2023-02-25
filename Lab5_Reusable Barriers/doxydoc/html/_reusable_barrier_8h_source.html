@@ -24,9 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="logo.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Lab5 - Reusable Barriers
+   &#160;<span id="projectnumber">Version: 1.1</span>
    </div>
    <div id="projectbrief">The purpose of the lab is to create a reusable barrier class that employs the Semaphore Class. It should be a fully working class (i.e. include constructors, destructors and a well defined interface).</div>
   </td>
@@ -101,9 +102,9 @@ $(document).ready(function(){initNavTree('_reusable_barrier_8h_source.html','');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> numThreads;         </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> count;              </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_semaphore.html">Semaphore</a> mutex{1};     </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_semaphore.html">Semaphore</a> innerGate{0}; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_semaphore.html">Semaphore</a> outerGate{1}; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_semaphore.html">Semaphore</a> innerGate{0}; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_semaphore.html">Semaphore</a> outerGate{1}; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_semaphore.html">Semaphore</a> countMutex{1}; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">ReusableBarrier</a>(<span class="keywordtype">int</span> Threads);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_reusable_barrier.html#abaae871a3c63e13f009c8cca4a07abb2">~ReusableBarrier</a>();</div>
@@ -116,10 +117,10 @@ $(document).ready(function(){initNavTree('_reusable_barrier_8h_source.html','');
 <div class="ttc" id="a_semaphore_8h_html"><div class="ttname"><a href="_semaphore_8h.html">Semaphore.h</a></div></div>
 <div class="ttc" id="aclass_reusable_barrier_html"><div class="ttname"><a href="class_reusable_barrier.html">ReusableBarrier</a></div><div class="ttdoc">A Reusable Barrier implementation.</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8h_source.html#l00022">ReusableBarrier.h:23</a></div></div>
 <div class="ttc" id="aclass_reusable_barrier_html_a05081af4a9504fcd4da95cf62b16e7de"><div class="ttname"><a href="class_reusable_barrier.html#a05081af4a9504fcd4da95cf62b16e7de">ReusableBarrier::wait</a></div><div class="ttdeci">void wait()</div></div>
-<div class="ttc" id="aclass_reusable_barrier_html_a1f4fbfae3960db05a0474f15b80d6b67"><div class="ttname"><a href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">ReusableBarrier::ReusableBarrier</a></div><div class="ttdeci">ReusableBarrier(int Threads)</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00014">ReusableBarrier.cpp:14</a></div></div>
-<div class="ttc" id="aclass_reusable_barrier_html_ab8e1c55da45a3848588d34025e04d99d"><div class="ttname"><a href="class_reusable_barrier.html#ab8e1c55da45a3848588d34025e04d99d">ReusableBarrier::taskA</a></div><div class="ttdeci">void taskA()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00020">ReusableBarrier.cpp:20</a></div></div>
+<div class="ttc" id="aclass_reusable_barrier_html_a1f4fbfae3960db05a0474f15b80d6b67"><div class="ttname"><a href="class_reusable_barrier.html#a1f4fbfae3960db05a0474f15b80d6b67">ReusableBarrier::ReusableBarrier</a></div><div class="ttdeci">ReusableBarrier(int Threads)</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00017">ReusableBarrier.cpp:17</a></div></div>
+<div class="ttc" id="aclass_reusable_barrier_html_ab8e1c55da45a3848588d34025e04d99d"><div class="ttname"><a href="class_reusable_barrier.html#ab8e1c55da45a3848588d34025e04d99d">ReusableBarrier::taskA</a></div><div class="ttdeci">void taskA()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00021">ReusableBarrier.cpp:21</a></div></div>
 <div class="ttc" id="aclass_reusable_barrier_html_abaae871a3c63e13f009c8cca4a07abb2"><div class="ttname"><a href="class_reusable_barrier.html#abaae871a3c63e13f009c8cca4a07abb2">ReusableBarrier::~ReusableBarrier</a></div><div class="ttdeci">virtual ~ReusableBarrier()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00012">ReusableBarrier.cpp:12</a></div></div>
-<div class="ttc" id="aclass_reusable_barrier_html_ad65578dbb2e60ce1fdf830195ba7f074"><div class="ttname"><a href="class_reusable_barrier.html#ad65578dbb2e60ce1fdf830195ba7f074">ReusableBarrier::taskB</a></div><div class="ttdeci">void taskB()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00047">ReusableBarrier.cpp:47</a></div></div>
+<div class="ttc" id="aclass_reusable_barrier_html_ad65578dbb2e60ce1fdf830195ba7f074"><div class="ttname"><a href="class_reusable_barrier.html#ad65578dbb2e60ce1fdf830195ba7f074">ReusableBarrier::taskB</a></div><div class="ttdeci">void taskB()</div><div class="ttdef"><b>Definition:</b> <a href="_reusable_barrier_8cpp_source.html#l00048">ReusableBarrier.cpp:48</a></div></div>
 <div class="ttc" id="aclass_semaphore_html"><div class="ttname"><a href="class_semaphore.html">Semaphore</a></div><div class="ttdoc">A Semaphore Implementation.</div><div class="ttdef"><b>Definition:</b> <a href="_semaphore_8h_source.html#l00014">Semaphore.h:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
