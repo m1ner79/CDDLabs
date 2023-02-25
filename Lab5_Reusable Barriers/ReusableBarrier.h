@@ -23,9 +23,9 @@ class ReusableBarrier
 {
     int numThreads;         /**Number of threads that must reach the barrier*/
     int count;              /**Number of threads that have reached the barrier*/
-    Semaphore mutex{1};     /**Mutex for synchronization*/
     Semaphore innerGate{0}; /**Condition variable for synchronization*/
     Semaphore outerGate{1}; /**Condition variable for synchronization*/
+    Semaphore countMutex{1}; /**Mutex to protect count variable*/ 
 
 public:
     /**Constructor that initializes the number of threads*/
